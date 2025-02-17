@@ -7,6 +7,13 @@ If you are looking for user-facing changes, check out [CHANGELOG.md](./CHANGELOG
 
 <!-- next version -->
 
+## v0.119.0
+
+### 🚀 New components 🚀
+
+- `metricstarttimeprocessor`: Add the initial skeleton for the metricsstarttimeprocessor (#37186)
+  The component is still in development and is not ready for use.
+
 ## v0.118.0
 
 ### 🛑 Breaking changes 🛑
@@ -507,9 +514,9 @@ If you are looking for user-facing changes, check out [CHANGELOG.md](./CHANGELOG
 ### 🚩 Deprecations 🚩
 
 - `pkg/stanza`: Deprecate 'helper.EncodingConfig' and 'helper.NewEncodingConfig' (#25846)
-- `pkg/stanza`: Deprecate encoding related elements of helper pacakge, in favor of new decoder package (#26019)
+- `pkg/stanza`: Deprecate encoding related elements of helper package, in favor of new decoder package (#26019)
   Includes the following deprecations | - Decoder - NewDecoder - LookupEncoding - IsNop
-- `pkg/stanza`: Deprecate tokenization related elements of helper pacakge, in favor of new tokenize package (#25914)
+- `pkg/stanza`: Deprecate tokenization related elements of helper package, in favor of new tokenize package (#25914)
   Includes the following deprecations | - Flusher - FlusherConfig - NewFlusherConfig - Multiline - MultilineConfig - NewMultilineConfig - NewLineStartSplitFunc - NewLineEndSplitFunc - NewNewlineSplitFunc - Splitter - SplitterConfig - NewSplitterConfig - SplitNone
 
 ### 💡 Enhancements 💡
