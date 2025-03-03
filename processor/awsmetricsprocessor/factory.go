@@ -1,8 +1,8 @@
 package awsmetricsprocessor
 
 import (
-	"fmt"
 	"context"
+	"fmt"
 
 	"go.opentelemetry.io/collector/component"
 	"go.opentelemetry.io/collector/consumer"
@@ -19,18 +19,11 @@ func NewFactory() processor.Factory {
 }
 
 func createMetricsProcessor(ctx context.Context, set processor.Settings, cfg component.Config, next consumer.Metrics) (processor.Metrics, error) {
-	config, ok := cfg.(*Config)
-	if !ok {
+	if config, ok := cfg.(*Config); ok {
+		logger := set.Logger
+		processor := NewProcessor(logger, next, config)
+		return &processor, nil
+	} else {
 		return nil, fmt.Errorf("configuration parsing error")
 	}
-
-	logger := set.Logger
-
-	metricsProcessor := &MetricsProcessor{
-		logger: logger,
-		next:   next,
-		config: config,
-	}
-
-	return metricsProcessor, nil
 }
