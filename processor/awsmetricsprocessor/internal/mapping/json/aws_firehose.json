@@ -1,0 +1,383 @@
+{
+  "Name": "AWS/Firehose",
+  "Prefix": "aws_firehose",
+  "Metrics": {
+    "ActivePartitionsLimit": {
+      "Name": "active_partitions_limit",
+      "Help": "The maximum number of active partitions that a Firehose stream processes before sending data to the error bucket"
+    },
+    "PartitionCount": {
+      "Name": "partition_count",
+      "Help": "The number of partitions that are being processed"
+    },
+    "PartitionCountExceeded": {
+      "Name": "partition_count_exceeded",
+      "Help": "Reports whether the partition count limit is exceeding (1 or 0 based on whether limit is breached or not)"
+    },
+    "JQProcessing.Duration": {
+      "Name": "jq_processing_duration",
+      "Help": "The amount of time it took to execute JQ expression in the JQ Lambda function"
+    },
+    "PerPartitionThroughput": {
+      "Name": "per_partition_throughput",
+      "Help": "The throughput that is being processed per partition"
+    },
+    "DeliveryToAmazonOpenSearchService.Bytes": {
+      "Name": "delivery_to_amazon_opensearch_service_bytes",
+      "Help": "The number of bytes indexed to OpenSearch Service"
+    },
+    "DeliveryToAmazonOpenSearchService.DataFreshness": {
+      "Name": "delivery_to_amazon_opensearch_service_data_freshness",
+      "Help": "The age of the oldest record in Amazon Data Firehose"
+    },
+    "DeliveryToAmazonOpenSearchService.Records": {
+      "Name": "delivery_to_amazon_opensearch_service_records",
+      "Help": "The number of records indexed to OpenSearch Service"
+    },
+    "DeliveryToAmazonOpenSearchService.Success": {
+      "Name": "delivery_to_amazon_opensearch_service_success",
+      "Help": "The sum of the successfully indexed records"
+    },
+    "DeliveryToAmazonOpenSearchService.AuthFailure": {
+      "Name": "delivery_to_amazon_opensearch_service_auth_failure",
+      "Help": "Authentication/authorization error"
+    },
+    "DeliveryToAmazonOpenSearchServerless.DeliveryRejected": {
+      "Name": "delivery_to_amazon_opensearch_serverless_delivery_rejected",
+      "Help": "Delivery rejected error"
+    },
+    "DeliveryToAmazonOpenSearchServerless.Bytes": {
+      "Name": "delivery_to_amazon_opensearch_serverless_bytes",
+      "Help": "The number of bytes indexed to OpenSearch Serverless over the specified time period"
+    },
+    "DeliveryToAmazonOpenSearchServerless.DataFreshness": {
+      "Name": "delivery_to_amazon_opensearch_serverless_data_freshness",
+      "Help": "The age of the oldest record in Amazon Data Firehose"
+    },
+    "DeliveryToAmazonOpenSearchServerless.Records": {
+      "Name": "delivery_to_amazon_opensearch_serverless_records",
+      "Help": "The number of records indexed to OpenSearch Serverless over the specified time period"
+    },
+    "DeliveryToAmazonOpenSearchServerless.Success": {
+      "Name": "delivery_to_amazon_opensearch_serverless_success",
+      "Help": "The sum of the successfully indexed records"
+    },
+    "DeliveryToAmazonOpenSearchServerless.AuthFailure": {
+      "Name": "delivery_to_amazon_opensearch_serverless_auth_failure",
+      "Help": "Authentication/authorization error (1 or 0 based on whether there is a delivery failure or not)"
+    },
+    "DeliveryToRedshift.Bytes": {
+      "Name": "delivery_to_redshift_bytes",
+      "Help": "The number of bytes copied to Amazon Redshift"
+    },
+    "DeliveryToRedshift.Records": {
+      "Name": "delivery_to_redshift_records",
+      "Help": "The number of records copied to Amazon Redshift"
+    },
+    "DeliveryToRedshift.Success": {
+      "Name": "delivery_to_redshift_success",
+      "Help": "The sum of successful Amazon Redshift COPY commands"
+    },
+    "DeliveryToSnowflake.Bytes": {
+      "Name": "delivery_to_snowflake_bytes",
+      "Help": "The number of bytes delivered to Snowflake"
+    },
+    "DeliveryToSnowflake.DataFreshness": {
+      "Name": "delivery_to_snowflake_data_freshness",
+      "Help": "The age of the oldest record in Amazon Data Firehose"
+    },
+    "DeliveryToSnowflake.DataCommitLatency": {
+      "Name": "delivery_to_snowflake_data_commit_latency",
+      "Help": "The time it takes for the data to be committed to Snowflake after Firehose inserted records successfully"
+    },
+    "DeliveryToSnowflake.Records": {
+      "Name": "delivery_to_snowflake_records",
+      "Help": "The number of records delivered to Snowflake"
+    },
+    "DeliveryToSnowflake.Success": {
+      "Name": "delivery_to_snowflake_success",
+      "Help": "The sum of successful insert calls made to Snowflake"
+    },
+    "DeliveryToSplunk.Bytes": {
+      "Name": "delivery_to_splunk_bytes",
+      "Help": "The number of bytes delivered to Splunk"
+    },
+    "DeliveryToSplunk.DataAckLatency": {
+      "Name": "delivery_to_splunk_data_ack_latency",
+      "Help": "The approximate duration it takes to receive an acknowledgement from Splunk after Amazon Data Firehose sends data"
+    },
+    "DeliveryToSplunk.DataFreshness": {
+      "Name": "delivery_to_splunk_data_freshness",
+      "Help": "The age of the oldest record in Amazon Data Firehose"
+    },
+    "DeliveryToSplunk.Records": {
+      "Name": "delivery_to_splunk_records",
+      "Help": "The number of records delivered to Splunk"
+    },
+    "DeliveryToSplunk.Success": {
+      "Name": "delivery_to_splunk_success",
+      "Help": "The sum of the successfully indexed records"
+    },
+    "DeliveryToHttpEndpoint.Bytes": {
+      "Name": "delivery_to_http_endpoint_bytes",
+      "Help": "The number of bytes delivered successfully to the HTTP endpoint"
+    },
+    "DeliveryToHttpEndpoint.Records": {
+      "Name": "delivery_to_http_endpoint_records",
+      "Help": "The number of records delivered successfully to the HTTP endpoint"
+    },
+    "DeliveryToHttpEndpoint.DataFreshness": {
+      "Name": "delivery_to_http_endpoint_data_freshness",
+      "Help": "The age of the oldest record in Amazon Data Firehose"
+    },
+    "DeliveryToHttpEndpoint.Success": {
+      "Name": "delivery_to_http_endpoint_success",
+      "Help": "The sum of all successful data delivery requests to the HTTP endpoint"
+    },
+    "DeliveryToHttpEndpoint.ProcessedBytes": {
+      "Name": "delivery_to_http_endpoint_processed_bytes",
+      "Help": "The number of attempted processed bytes, including retries"
+    },
+    "DeliveryToHttpEndpoint.ProcessedRecords": {
+      "Name": "delivery_to_http_endpoint_processed_records",
+      "Help": "The number of attempted records including retries"
+    },
+    "DataReadFromKinesisStream.Bytes": {
+      "Name": "data_read_from_kinesis_stream_bytes",
+      "Help": "The number of bytes read from the data stream"
+    },
+    "DataReadFromKinesisStream.Records": {
+      "Name": "data_read_from_kinesis_stream_records",
+      "Help": "The number of records read from the data stream"
+    },
+    "ThrottledDescribeStream": {
+      "Name": "throttled_describe_stream",
+      "Help": "The total number of times the DescribeStream operation is throttled"
+    },
+    "ThrottledGetRecords": {
+      "Name": "throttled_get_records",
+      "Help": "The total number of times the GetRecords operation is throttled"
+    },
+    "ThrottledGetShardIterator": {
+      "Name": "throttled_get_shard_iterator",
+      "Help": "The total number of times the GetShardIterator operation is throttled"
+    },
+    "KinesisMillisBehindLatest": {
+      "Name": "kinesis_millis_behind_latest",
+      "Help": "The number of milliseconds that the last read record is behind the newest record"
+    },
+    "BytesPerSecondLimit": {
+       "Name": "bytes_per_second_limit",
+       "Help": "The current maximum number of bytes per second that a Firehose stream can ingest before throttling"
+     },
+     "IncomingBytes": {
+       "Name": "incoming_bytes",
+       "Help": "The number of bytes ingested successfully into the Firehose stream "
+     },
+     "IncomingPutRequests": {
+       "Name": "incoming_put_requests",
+       "Help": "The number of successful PutRecord and PutRecordBatch requests"
+     },
+     "IncomingRecords": {
+       "Name": "incoming_records",
+       "Help": "The number of records ingested successfully into the Firehose stream"
+     },
+     "RecordsPerSecondLimit": {
+       "Name": "records_per_second_limit",
+       "Help": "The current maximum number of records per second that a Firehose stream can ingest before throttling"
+     },
+     "ThrottledRecords": {
+       "Name": "throttled_records",
+       "Help": "The number of records that were throttled because data ingestion exceeded one of the Firehose stream limits"
+     },
+     "DataReadFromSource.Records": {
+       "Name": "data_read_from_source_records",
+       "Help": "The number of records read from the source Kafka Topic"
+     },
+     "DataReadFromSource.Bytes": {
+       "Name": "data_read_from_source_bytes",
+       "Help": "The number of bytes read from the source Kafka Topic"
+     },
+     "SourceThrottled.Delay": {
+       "Name": "source_throttled_delay",
+       "Help": "The amount of time that the source Kafka cluster is delayed in returning the records from the source Kafka Topic"
+     },
+     "KafkaOffsetLag": {
+       "Name": "kafka_offset_lag",
+       "Help": "The difference between the largest offset of the record that Firehose has read from the source Kafka Topic and the largest offset of the record available from the source Kafka Topic"
+     },
+     "FailedValidation.Records": {
+       "Name": "failed_validation_records",
+       "Help": "The number of records that failed record validation"
+     },
+     "FailedValidation.Bytes": {
+       "Name": "failed_validation_bytes",
+       "Help": "The number of bytes that failed record validation"
+     },
+     "DataReadFromSource.Backpressured": {
+       "Name": "data_read_from_source_backpressured",
+       "Help": "Indicates that a Firehose stream is delayed in reading records from the source partition"
+     },
+     "DescribeDeliveryStream.Latency": {
+       "Name": "describe_delivery_stream_latency",
+       "Help": "The time taken per DescribeDeliveryStream operation"
+     },
+     "DescribeDeliveryStream.Requests": {
+       "Name": "describe_delivery_stream_requests",
+       "Help": "The total number of DescribeDeliveryStream requests"
+     },
+     "ListDeliveryStreams.Latency": {
+       "Name": "list_delivery_streams_latency",
+       "Help": "The time taken per ListDeliveryStream operation"
+     },
+     "ListDeliveryStreams.Requests": {
+       "Name": "list_delivery_streams_requests",
+       "Help": "The total number of ListFirehose requests"
+     },
+     "PutRecord.Bytes": {
+       "Name": "put_record_bytes",
+       "Help": "The number of bytes put to the Firehose stream using PutRecord"
+     },
+     "PutRecord.Latency": {
+       "Name": "put_record_latency",
+       "Help": "The time taken per PutRecord operation"
+     },
+     "PutRecord.Requests": {
+       "Name": "put_record_requests",
+       "Help": "The total number of PutRecord requests"
+     },
+     "PutRecordBatch.Bytes": {
+       "Name": "put_record_batch_bytes",
+       "Help": "The number of bytes put to the Firehose stream using PutRecordBatch"
+     },
+     "PutRecordBatch.Latency": {
+       "Name": "put_record_batch_latency",
+       "Help": "The time taken per PutRecordBatch operation"
+     },
+     "PutRecordBatch.Records": {
+       "Name": "put_record_batch_records",
+       "Help": "The total number of records from PutRecordBatch operations"
+     },
+     "PutRecordBatch.Requests": {
+       "Name": "put_record_batch_requests",
+       "Help": "The total number of PutRecordBatch requests"
+     },
+     "PutRequestsPerSecondLimit": {
+       "Name": "put_requests_per_second_limit",
+       "Help": "The maximum number of put requests per second that a Firehose stream can handle before throttling"
+     },
+     "UpdateDeliveryStream.Latency": {
+       "Name": "update_delivery_stream_latency",
+       "Help": "The time taken per UpdateDeliveryStream operation"
+     },
+     "UpdateDeliveryStream.Requests": {
+       "Name": "update_delivery_stream_requests",
+       "Help": "The total number of UpdateDeliveryStream requests"
+     },
+     "ExecuteProcessing.Duration": {
+       "Name": "execute_processing_duration",
+       "Help": "The time it takes for each Lambda function invocation performed by Firehose"
+     },
+     "ExecuteProcessing.Success": {
+       "Name": "execute_processing_success",
+       "Help": "The sum of the successful Lambda function invocations over the sum of the total Lambda function invocations"
+     },
+     "SucceedProcessing.Records": {
+       "Name": "succeed_processing_records",
+       "Help": "The number of successfully processed records over the specified time period"
+     },
+     "SucceedProcessing.Bytes": {
+       "Name": "succeed_processing_bytes",
+       "Help": "The number of successfully processed bytes over the specified time period"
+     },
+     "OutputDecompressedBytes.Success": {
+       "Name": "output_decompressed_bytes_success",
+       "Help": "Successful decompressed data in bytes"
+     },
+     "OutputDecompressedBytes.Failed": {
+       "Name": "output_decompressed_bytes_failed",
+       "Help": "Failed decompressed data in bytes"
+     },
+     "OutputDecompressedRecords.Success": {
+       "Name": "output_decompressed_records_success",
+       "Help": "Number of successful decompressed records"
+     },
+     "OutputDecompressedRecords.Failed": {
+       "Name": "output_decompressed_records_failed",
+       "Help": "Number of failed decompressed records"
+     },
+     "SucceedConversion.Records": {
+       "Name": "succeed_conversion_records",
+       "Help": "The number of successfully converted records"
+     },
+     "SucceedConversion.Bytes": {
+       "Name": "succeed_conversion_bytes",
+       "Help": "The size of the successfully converted records"
+     },
+     "FailedConversion.Records": {
+       "Name": "failed_conversion_records",
+       "Help": "The number of records that could not be converted"
+     },
+     "FailedConversion.Bytes": {
+       "Name": "failed_conversion_bytes",
+       "Help": "The size of the records that could not be converted"
+     },
+     "KMSKeyAccessDenied": {
+       "Name": "kms_key_access_denied",
+       "Help": "The number of times the service encounters a KMSAccessDeniedException for the Firehose stream"
+     },
+     "KMSKeyDisabled": {
+       "Name": "kms_key_disabled",
+       "Help": "The number of times the service encounters a KMSDisabledException for the Firehose stream"
+     },
+     "KMSKeyInvalidState": {
+       "Name": "kms_key_invalid_state",
+       "Help": "The number of times the service encounters a KMSInvalidStateException for the Firehose stream"
+     },
+     "KMSKeyNotFound": {
+       "Name": "kms_key_not_found",
+       "Help": "The number of times the service encounters a KMSNotFoundException for the Firehose stream"
+     },
+     "DeliveryToS3.ObjectCount": {
+      "Name": "delivery_to_s3_object_count",
+      "Help": "The number of objects that are being delivered to the S3 bucket"
+    },
+    "DeliveryToS3.Bytes": {
+      "Name": "delivery_to_s3_bytes",
+      "Help": "The number of bytes delivered to Amazon S3"
+    },
+    "DeliveryToS3.DataFreshness": {
+      "Name": "delivery_to_s3_data_freshness",
+      "Help": "The age of the oldest record in Amazon Data Firehose"
+    },
+    "DeliveryToS3.Records": {
+      "Name": "delivery_to_s3_records",
+      "Help": "The number of records delivered to Amazon S3"
+    },
+    "DeliveryToS3.Success": {
+      "Name": "delivery_to_s3_success",
+      "Help": "The sum of successful Amazon S3 put commands"
+    },
+    "BackupToS3.Bytes": {
+      "Name": "backup_to_s3_bytes",
+      "Help": "The number of bytes delivered to Amazon S3 for backup"
+    },
+    "BackupToS3.DataFreshness": {
+      "Name": "backup_to_s3_data_freshness",
+      "Help": "The age of the oldest record in Amazon Data Firehose"
+    },
+    "BackupToS3.Records": {
+      "Name": "backup_to_s3_records",
+      "Help": "The number of records delivered to Amazon S3 for backup"
+    },
+    "BackupToS3.Success": {
+      "Name": "backup_to_s3_success",
+      "Help": "Sum of successful Amazon S3 put commands for backup"
+    }
+  },
+  "Dimensions ": {
+    "DeliveryStreamName": {
+      "Name": "delivery_stream_name"
+    }
+  }
+}

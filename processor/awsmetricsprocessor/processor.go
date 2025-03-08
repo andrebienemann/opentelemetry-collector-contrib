@@ -1,6 +1,7 @@
 package awsmetricsprocessor
 
 import (
+	"fmt"
 	"context"
 
 	"go.opentelemetry.io/collector/component"
@@ -9,6 +10,8 @@ import (
 	"go.uber.org/zap"
 
 	"github.com/open-telemetry/opentelemetry-collector-contrib/processor/awsmetricsprocessor/internal/data"
+	"github.com/open-telemetry/opentelemetry-collector-contrib/processor/awsmetricsprocessor/internal/cache"
+	"github.com/open-telemetry/opentelemetry-collector-contrib/processor/awsmetricsprocessor/internal/mapping"
 )
 
 type Processor struct {
@@ -17,8 +20,8 @@ type Processor struct {
 	logger  *zap.Logger
 	next    consumer.Metrics
 	config  *Config
-	cache   data.Cache
-	mapping data.Mapping
+	cache   cache.Cache
+	mapping mapping.Mapping
 }
 
 func NewProcessor(logger *zap.Logger, next consumer.Metrics, config *Config) Processor {
@@ -31,67 +34,93 @@ func (processor *Processor) Start(ctx context.Context, host component.Host) erro
 	ctx = context.Background()
 	ctx, processor.cancel = context.WithCancel(ctx)
 
-	processor.cache = data.NewCache()
-	processor.mapping = data.NewMapping()
+	processor.cache = cache.NewCache()
+
+	mapping, _ := mapping.NewMapping()
+	processor.mapping = mapping
 
 	return nil
 }
 
 func (processor *Processor) ConsumeMetrics(ctx context.Context, ms pmetric.Metrics) error {
-	resourceMetricsSlice := ms.ResourceMetrics()
-	for p := 0; p < resourceMetricsSlice.Len(); p++ {
-		resourceMetrics := resourceMetricsSlice.At(p)
-		resource := resourceMetrics.Resource()
-		scopeMetricsSlice := resourceMetrics.ScopeMetrics()
-		for q := 0; q < scopeMetricsSlice.Len(); q++ {
-			scopeMetrics := scopeMetricsSlice.At(q)
-			metricSlice := scopeMetrics.Metrics()
-			for r := 0; r < metricSlice.Len(); r++ {
-				metric := metricSlice.At(r)
-				summary := metric.Summary()
-				summaryDataPointSlice := summary.DataPoints()
-				for s := 0; s < summaryDataPointSlice.Len(); s++ {
-					dataPoint := summaryDataPointSlice.At(s)
-					container := data.NewContainer(&resource, &metric, &dataPoint)
-					processor.Display(&container)
-					processor.Update(&container)
-					processor.Translate(&container)
-				}
-			}
-		}
-	}
+	resources := data.From(&ms)
+	resources.Apply(func (resource *data.Resource) {
+		resource.Scopes().Apply(func (scope *data.Scope) {
+			scope.Metrics().Apply(func (metric *data.Metric) {
+				metric.DataPoints().Apply(func (dataPoint *data.DataPoint){
+					processor.Display(resource, metric, dataPoint)
+					processor.Update(resource, metric, dataPoint)
+				})
+				processor.AddHelp(resource, metric)
+				processor.Translate(resource, metric)
+			})
+		})
+	})
 
 	return processor.next.ConsumeMetrics(ctx, ms)
 }
 
-func (processor *Processor) Update(container *data.Container) {
-	key := container.AsKey()
+func (processor *Processor) Update(resource *data.Resource, metric *data.Metric, dataPoint *data.DataPoint) {
+	resourceAttributes := resource.ResourceAttributes()
+	metricAttributes := metric.MetricAttributes()
+	dataPointAttributes := dataPoint.DataPointAttributes()
 
-	sum := container.DataPoint.Sum()
-	count := container.DataPoint.Count()
+	key := fmt.Sprintf("%s, %s, %s", resourceAttributes, metricAttributes, dataPointAttributes)
+
+	sum := dataPoint.GetSum()
+	count := dataPoint.GetCount()
 
 	if record, ok := processor.cache.GetRecord(key); !ok {
-		record := data.NewRecord(sum, count)
+		record := cache.NewRecord(sum, count)
 		processor.cache.PutRecord(key, &record)
 	} else {
-		container.DataPoint.SetSum(record.IncSum(sum))
-		container.DataPoint.SetCount(record.IncCount(count))
+		dataPoint.SetSum(record.IncrSum(sum))
+		dataPoint.SetCount(record.IncrCount(count))
 	}
 }
 
-func (processor *Processor) Translate(container *data.Container) {
-	nameSpace := container.GetMetricNamespace()
-	metricName := container.GetMetricName()
-	canonicalName := processor.mapping.GetMetricName(nameSpace, metricName)
-	container.Metric.SetName(canonicalName)
+func (processor *Processor) Translate(resource *data.Resource, metric *data.Metric) {
+	namespace, err := processor.mapping.GetNamespace(resource.GetNamespace())
+
+	if err != nil {
+		processor.logger.Info(err.Error())
+		return
+	}
+
+	metricName, err := namespace.GetMetricName(metric.GetName())
+
+	if err != nil {
+		processor.logger.Info(err.Error())
+		return
+	}
+
+	metric.SetName(metricName)
 }
 
-func (processor *Processor) Display(container *data.Container) {
-	resourceAttributes := container.ResourceAttributes()
+func (processor *Processor) AddHelp(resource *data.Resource, metric *data.Metric) {
+	namespace, err := processor.mapping.GetNamespace(resource.GetNamespace())
+
+	if err != nil {
+		processor.logger.Info(err.Error())
+		return
+	}
+
+	help, err := namespace.GetMetricHelp(metric.GetName())
+
+	if err != nil {
+		processor.logger.Info(err.Error())
+		return
+	}
+
+	metric.SetDescription(help)
+}
+
+func (processor *Processor) Display(resource *data.Resource, metric *data.Metric, dataPoint *data.DataPoint) {
+	resourceAttributes := resource.ResourceAttributes()
 	processor.logger.Info(resourceAttributes)
-	metricAttributes := container.MetricAttributes()
+	metricAttributes := metric.MetricAttributes()
 	processor.logger.Info(metricAttributes)
-	dataPointAttributes := container.DataPointAttributes()
+	dataPointAttributes := dataPoint.DataPointAttributes()
 	processor.logger.Info(dataPointAttributes)
 }
 

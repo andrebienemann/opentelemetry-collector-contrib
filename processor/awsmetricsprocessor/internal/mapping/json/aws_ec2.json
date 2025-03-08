@@ -1,0 +1,124 @@
+{
+  "Name": "AWS/EC2",
+  "Prefix": "aws_ec2",
+  "Metrics": {
+    "CPUUtilization": {
+      "Name": "cpu_utilization",
+      "Help": "The percentage of physical CPU time that Amazon EC2 uses to run the EC2 instance"
+    },
+    "DiskReadOps": {
+      "Name": "disk_read_ops",
+      "Help": "Completed read operations from all instance store volumes available to the instance"
+    },
+    "DiskWriteOps": {
+      "Name": "disk_write_ops",
+      "Help": "Completed write operations to all instance store volumes available to the instance"
+    },
+    "DiskReadBytes": {
+      "Name": "disk_read_bytes",
+      "Help": "Bytes read from all instance store volumes available to the instance"
+    },
+    "DiskWriteBytes": {
+      "Name": "disk_write_bytes",
+      "Help": "Bytes written to all instance store volumes available to the instance"
+    },
+    "MetadataNoToken": {
+      "Name": "metadata_no_token",
+      "Help": "The number of times IMDS was successfully accessed using a method that does not use a token"
+    },
+    "MetadataNoTokenRejected": {
+      "Name": "metadata_no_token_rejected",
+      "Help": "The number of times an IMDSv1 call was attempted after IMDSv1 was disabled"
+    },
+    "NetworkIn": {
+      "Name": "network_in_bytes",
+      "Help": "The number of bytes received by the instance on all network interfaces"
+    },
+    "NetworkOut": {
+      "Name": "network_out_bytes",
+      "Help": "The number of bytes sent out by the instance on all network interfaces"
+    },
+    "NetworkPacketsIn": {
+      "Name": "network_packets_in",
+      "Help": "The number of packets received by the instance on all network interfaces"
+    },
+    "NetworkPacketsOut": {
+      "Name": "network_packets_out",
+      "Help": "The number of packets sent out by the instance on all network interfaces"
+    },
+    "CPUCreditUsage": {
+      "Name": "cpu_credit_usage",
+      "Help": "The number of CPU credits spent by the instance for CPU utilization"
+    },
+    "CPUCreditBalance": {
+      "Name": "cpu_credit_balance",
+      "Help": "The number of earned CPU credits that an instance has accrued since it was launched or started"
+    },
+    "CPUSurplusCreditBalance": {
+      "Name": "cpu_surplus_credit_balance",
+      "Help": "The number of surplus credits that have been spent by an unlimited instance when its CPUCreditBalance value is zero"
+    },
+    "CPUSurplusCreditsCharged": {
+      "Name": "cpu_surplus_credits_charged",
+      "Help": "The number of spent surplus credits that are not paid down by earned CPU credits"
+    },
+    "DedicatedHostCPUUtilization": {
+      "Name": "dedicated_host_cpu_utilization",
+      "Help": "The percentage of allocated compute capacity"
+    },
+    "EBSReadOps": {
+      "Name": "ebs_read_ops",
+      "Help": "Completed read operations from all Amazon EBS volumes attached to the instance"
+    },
+    "EBSWriteOps": {
+      "Name": "ebs_write_ops",
+      "Help": "Completed write operations to all EBS volumes attached to the instance"
+    },
+    "EBSReadBytes": {
+      "Name": "ebs_read_bytes",
+      "Help": "Bytes read from all EBS volumes attached to the instance in a specified period of time"
+    },
+    "EBSWriteBytes": {
+      "Name": "ebs_write_bytes",
+      "Help": "Bytes written to all EBS volumes attached to the instance in a specified period of time"
+    },
+    "EBSIOBalance%": {
+      "Name": "ebs_io_balance_percent",
+      "Help": "The percentage of I/O credits remaining in the burst bucket"
+    },
+    "EBSByteBalance%": {
+      "Name": "ebs_byte_balance_percent",
+      "Help": "The percentage of throughput credits remaining in the burst bucket"
+    },
+    "StatusCheckFailed": {
+      "Name": "status_check_failed",
+      "Help": "Reports whether the instance has passed all status checks"
+    },
+    "StatusCheckFailed_Instance": {
+      "Name": "status_check_failed_instance",
+      "Help": "Reports whether the instance has passed the instance status check"
+    },
+    "StatusCheckFailed_System": {
+      "Name": "status_check_failed_system",
+      "Help": "Reports whether the instance has passed the system status check"
+    },
+    "StatusCheckFailed_AttachedEBS": {
+      "Name": "status_check_failed_attached_ebs",
+      "Help": "Reports whether the instance has passed the attached EBS status check"
+    }
+  },
+  "Dimensions": {
+    "AutoScalingGroupName": {
+      "Name": "auto_scaling_group_name"
+    },
+    "ImageId": {
+      "Name": "image_id"
+    },
+    "InstanceId": {
+      "Name": "instance_id"
+    },
+    "InstanceType": {
+      "Name": "instance_type"
+    }
+  }
+}
