@@ -1,0 +1,355 @@
+{
+  "Name": "CWAgent",
+  "Prefix": "aws_cloudwatch_agent",
+  "Metrics": {
+    "cpu_time_active": {
+      "Name": "cpu_time_active",
+      "Help": "The amount of time that the CPU is active in any capacity"
+    },
+    "cpu_time_guest": {
+      "Name": "cpu_time_guest",
+      "Help": "The amount of time that the CPU is running a virtual CPU for a guest operating system"
+    },
+    "cpu_time_guest_nice": {
+      "Name": "cpu_time_guest_nice",
+      "Help": "The amount of time that the CPU is running a virtual CPU for a guest operating system, which is low-priority and can be interrupted by other processes"
+    },
+    "cpu_time_idle": {
+      "Name": "cpu_time_idle",
+      "Help": "The amount of time that the CPU is idle"
+    },
+    "cpu_time_iowait": {
+      "Name": "cpu_time_iowait",
+      "Help": "The amount of time that the CPU is waiting for I/O operations to complete"
+    },
+    "cpu_time_irq": {
+      "Name": "cpu_time_irq",
+      "Help": "The amount of time that the CPU is servicing interrupts"
+    },
+    "cpu_time_nice": {
+      "Name": "cpu_time_nice",
+      "Help": "The amount of time that the CPU is in user mode with low-priority processes, which can easily be interrupted by higher-priority processes"
+    },
+    "cpu_time_softirq": {
+      "Name": "cpu_time_softirq",
+      "Help": "The amount of time that the CPU is servicing software interrupts"
+    },
+    "cpu_time_steal": {
+      "Name": "cpu_time_steal",
+      "Help": "The amount of time that the CPU is in stolen time, which is time spent in other operating systems in a virtualized environment"
+    },
+    "cpu_time_system": {
+      "Name": "cpu_time_system",
+      "Help": "The amount of time that the CPU is in system mode"
+    },
+    "cpu_time_user": {
+      "Name": "cpu_time_user",
+      "Help": "The amount of time that the CPU is in user mode"
+    },
+    "cpu_usage_active": {
+      "Name": "cpu_usage_active",
+      "Help": "The percentage of time that the CPU is active in any capacity"
+    },
+    "cpu_usage_guest": {
+      "Name": "cpu_usage_guest",
+      "Help": "The percentage of time that the CPU is running a virtual CPU for a guest operating system"
+    },
+    "cpu_usage_guest_nice": {
+      "Name": "cpu_usage_guest_nice",
+      "Help": "The percentage of time that the CPU is running a virtual CPU for a guest operating system, which is low-priority and can be interrupted by other processes"
+    },
+    "cpu_usage_idle": {
+      "Name": "cpu_usage_idle",
+      "Help": "The percentage of time that the CPU is idle"
+    },
+    "cpu_usage_iowait": {
+      "Name": "cpu_usage_iowait",
+      "Help": "The percentage of time that the CPU is waiting for I/O operations to complete"
+    },
+    "cpu_usage_irq": {
+      "Name": "cpu_usage_irq",
+      "Help": "The percentage of time that the CPU is servicing interrupts"
+    },
+    "cpu_usage_nice": {
+      "Name": "cpu_usage_nice",
+      "Help": "The percentage of time that the CPU is in user mode with low-priority processes, which higher-priority processes can easily interrupt"
+    },
+    "cpu_usage_softirq": {
+      "Name": "cpu_usage_softirq",
+      "Help": "The percentage of time that the CPU is servicing software interrupts"
+    },
+    "cpu_usage_steal": {
+      "Name": "cpu_usage_steal",
+      "Help": "The percentage of time that the CPU is in stolen time"
+    },
+    "cpu_usage_system": {
+      "Name": "cpu_usage_system",
+      "Help": "The percentage of time that the CPU is in system mode"
+    },
+    "cpu_usage_user": {
+      "Name": "cpu_usage_user",
+      "Help": "The percentage of time that the CPU is in user mode"
+    },
+    "disk_free": {
+      "Name": "disk_free",
+      "Help": "Free space on the disks"
+    },
+    "disk_inodes_free": {
+      "Name": "disk_inodes_free",
+      "Help": "The number of available index nodes on the disk"
+    },
+    "disk_inodes_total": {
+      "Name": "disk_inodes_total",
+      "Help": "The total number of index nodes reserved on the disk"
+    },
+    "disk_inodes_used": {
+      "Name": "disk_inodes_used",
+      "Help": "The number of used index nodes on the disk"
+    },
+    "disk_total": {
+      "Name": "disk_total",
+      "Help": "Total space on the disks, including used and free"
+    },
+    "disk_used": {
+      "Name": "disk_used",
+      "Help": "Used space on the disks"
+    },
+    "disk_used_percent": {
+      "Name": "disk_used_percent",
+      "Help": "The percentage of total disk space that is used"
+    },
+    "diskio_iops_in_progress": {
+      "Name": "diskio_iops_in_progress",
+      "Help": "The number of I/O requests that have been issued to the device driver but have not yet completed"
+    },
+    "diskio_io_time": {
+      "Name": "diskio_io_time",
+      "Help": "The amount of time that the disk has had I/O requests queued"
+    },
+    "diskio_reads": {
+      "Name": "diskio_reads",
+      "Help": "The number of disk read operations"
+    },
+    "diskio_read_bytes": {
+      "Name": "diskio_read_bytes",
+      "Help": "The number of bytes read from the disks"
+    },
+    "diskio_read_time": {
+      "Name": "diskio_read_time",
+      "Help": "The amount of time that read requests have waited on the disks"
+    },
+    "diskio_writes": {
+      "Name": "diskio_writes",
+      "Help": "The number disk write operations"
+    },
+    "diskio_write_bytes": {
+      "Name": "diskio_write_bytes",
+      "Help": "The number of bytes written to the disks"
+    },
+    "diskio_write_time": {
+      "Name": "diskio_write_time",
+      "Help": "The amount of time that write requests have waited on the disks"
+    },
+    "ethtool_bw_in_allowance_exceeded": {
+      "Name": "ethtool_bw_in_allowance_exceeded",
+      "Help": "The number of packets queued and/or dropped because the inbound aggregate bandwidth exceeded the maximum for the instance"
+    },
+    "ethtool_bw_out_allowance_exceeded": {
+      "Name": "ethtool_bw_out_allowance_exceeded",
+      "Help": "The number of packets queued and/or dropped because the outbound aggregate bandwidth exceeded the maximum for the instance"
+    },
+    "ethtool_conntrack_allowance_exceeded": {
+      "Name": "ethtool_conntrack_allowance_exceeded",
+      "Help": "The number of packets dropped because connection tracking exceeded the maximum for the instance and new connections could not be established"
+    },
+    "ethtool_linklocal_allowance_exceeded": {
+      "Name": "ethtool_linklocal_allowance_exceeded",
+      "Help": "The number of packets dropped because the PPS of the traffic to local proxy services exceeded the maximum for the network interface"
+    },
+    "ethtool_pps_allowance_exceeded": {
+      "Name": "ethtool_pps_allowance_exceeded",
+      "Help": "The number of packets queued and/or dropped because the bidirectional PPS exceeded the maximum for the instance"
+    },
+    "mem_active": {
+      "Name": "mem_active",
+      "Help": "The amount of memory that has been used in some way"
+    },
+    "mem_available": {
+      "Name": "mem_available",
+      "Help": "The amount of memory that is available and can be given instantly to processes"
+    },
+    "mem_available_percent": {
+      "Name": "mem_available_percent",
+      "Help": "The percentage of memory that is available and can be given instantly to processes"
+    },
+    "mem_buffered": {
+      "Name": "mem_buffered",
+      "Help": "The amount of memory that is being used for buffers"
+    },
+    "mem_cached": {
+      "Name": "mem_cached",
+      "Help": "The amount of memory that is being used for file caches"
+    },
+    "mem_free": {
+      "Name": "mem_free",
+      "Help": "The amount of memory that isn't being used"
+    },
+    "mem_inactive": {
+      "Name": "mem_inactive",
+      "Help": "The amount of memory that has been recently used but is reclaimable"
+    },
+    "mem_total": {
+      "Name": "mem_total",
+      "Help": "The total amount of memory"
+    },
+    "mem_used": {
+      "Name": "mem_used",
+      "Help": "The amount of memory currently in use"
+    },
+    "mem_used_percent": {
+      "Name": "mem_used_percent",
+      "Help": "The percentage of memory currently in use"
+    },
+    "net_bytes_recv": {
+      "Name": "net_bytes_recv",
+      "Help": "The number of bytes received by the network interface"
+    },
+    "net_bytes_sent": {
+      "Name": "net_bytes_sent",
+      "Help": "The number of bytes sent by the network interface"
+    },
+    "net_drop_in": {
+      "Name": "net_drop_in",
+      "Help": "The number of packets received by the network interface that were dropped"
+    },
+    "net_drop_out": {
+      "Name": "net_drop_out",
+      "Help": "The number of packets transmitted by the network interface that were dropped"
+    },
+    "net_err_in": {
+      "Name": "net_err_in",
+      "Help": "The number of receive errors detected by the network interface"
+    },
+    "net_err_out": {
+      "Name": "net_err_out",
+      "Help": "The number of transmit errors detected by the network interface"
+    },
+    "net_packets_sent": {
+      "Name": "net_packets_sent",
+      "Help": "The number of packets sent by the network interface"
+    },
+    "net_packets_recv": {
+      "Name": "net_packets_recv",
+      "Help": "The number of packets received by the network interface"
+    },
+    "netstat_tcp_close": {
+      "Name": "netstat_tcp_close",
+      "Help": "The number of TCP connections with no state"
+    },
+    "netstat_tcp_close_wait": {
+      "Name": "netstat_tcp_close_wait",
+      "Help": "The number of TCP connections waiting for a termination request from the client"
+    },
+    "netstat_tcp_closing": {
+      "Name": "netstat_tcp_closing",
+      "Help": "The number of TCP connections that are waiting for a termination request with acknowledgement from the client"
+    },
+    "netstat_tcp_established": {
+      "Name": "netstat_tcp_established",
+      "Help": "The number of TCP connections established"
+    },
+    "netstat_tcp_fin_wait1": {
+      "Name": "netstat_tcp_fin_wait1",
+      "Help": "The number of TCP connections in the FIN_WAIT1 state"
+    },
+    "netstat_tcp_fin_wait2": {
+      "Name": "netstat_tcp_fin_wait2",
+      "Help": "The number of TCP connections in the FIN_WAIT2 state"
+    },
+    "netstat_tcp_last_ack": {
+      "Name": "netstat_tcp_last_ack",
+      "Help": "The number of TCP connections waiting for the client to send acknowledgement of the connection termination message"
+    },
+    "netstat_tcp_listen": {
+      "Name": "netstat_tcp_listen",
+      "Help": "The number of TCP ports currently listening for a connection request"
+    },
+    "netstat_tcp_none": {
+      "Name": "netstat_tcp_none",
+      "Help": "The number of TCP connections with inactive clients"
+    },
+    "netstat_tcp_syn_sent": {
+      "Name": "netstat_tcp_syn_sent",
+      "Help": "The number of TCP connections waiting for a matching connection request after having sent a connection request"
+    },
+    "netstat_tcp_syn_recv": {
+      "Name": "netstat_tcp_syn_recv",
+      "Help": "The number of TCP connections waiting for connection request acknowledgement after having sent and received a connection request"
+    },
+    "netstat_tcp_time_wait": {
+      "Name": "netstat_tcp_time_wait",
+      "Help": "The number of TCP connections currently waiting to ensure that the client received the acknowledgement of its connection termination request"
+    },
+    "netstat_udp_socket": {
+      "Name": "netstat_udp_socket",
+      "Help": "The number of current UDP connections"
+    },
+    "processes_blocked": {
+      "Name": "processes_blocked",
+      "Help": "The number of processes that are blocked"
+    },
+    "processes_dead": {
+      "Name": "processes_dead",
+      "Help": "The number of processes that are dead"
+    },
+    "processes_idle": {
+      "Name": "processes_idle",
+      "Help": "The number of processes that are idle"
+    },
+    "processes_paging": {
+      "Name": "processes_paging",
+      "Help": "The number of processes that are paging"
+    },
+    "processes_running": {
+      "Name": "processes_running",
+      "Help": "The number of processes that are running"
+    },
+    "processes_sleeping": {
+      "Name": "processes_sleeping",
+      "Help": "The number of processes that are sleeping"
+    },
+    "processes_stopped": {
+      "Name": "processes_stopped",
+      "Help": "The number of processes that are stopped"
+    },
+    "processes_total": {
+      "Name": "processes_total",
+      "Help": "The total number of processes on the instance"
+    },
+    "processes_total_threads": {
+      "Name": "processes_total_threads",
+      "Help": "The total number of threads making up the processes"
+    },
+    "processes_wait": {
+      "Name": "processes_wait",
+      "Help": "The number of processes that are paging"
+    },
+    "processes_zombies": {
+      "Name": "processes_zombies",
+      "Help": "The number of zombie processes"
+    },
+    "swap_free": {
+      "Name": "swap_free",
+      "Help": "The amount of swap space that isn't being used"
+    },
+    "swap_used": {
+      "Name": "swap_used",
+      "Help": "The amount of swap space currently in use"
+    },
+    "swap_used_percent": {
+      "Name": "swap_used_percent",
+      "Help": "The percentage of swap space currently in use"
+    }
+  },
+  "Dimensions": {}
+}

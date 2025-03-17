@@ -1,0 +1,92 @@
+{
+  "Name": "AWS/Logs",
+  "Prefix": "aws_cloudwatch_logs",
+  "Metrics": {
+    "CallCount": {
+      "Name": "call_count",
+      "Help": "The number of specified API operations performed in the account"
+    },
+    "DeliveryErrors": {
+      "Name": "delivery_errors",
+      "Help": "The number of log events for which CloudWatch Logs received an error"
+    },
+    "DeliveryThrottling": {
+      "Name": "delivery_throttling",
+      "Help": "The number of log events for which CloudWatch Logs was throttled"
+    },
+    "EMFParsingErrors": {
+      "Name": "emf_parsing_errors",
+      "Help": "The number of parsing errors encountered while processing embedded metric format logs"
+    },
+    "EMFValidationErrors": {
+      "Name": "emf_validation_errors",
+      "Help": "The number of validation errors encountered while processing embedded metric format logs"
+    },
+    "ErrorCount": {
+      "Name": "error_count",
+      "Help": "The number of API operations that resulted in errors"
+    },
+    "ForwardedBytes": {
+      "Name": "forwarded_bytes",
+      "Help": "The volume of log events in compressed bytes forwarded to the subscription destination"
+    },
+    "ForwardedLogEvents": {
+      "Name": "forwarded_log_events",
+      "Help": "The number of log events forwarded to the subscription destination"
+    },
+    "IncomingBytes": {
+      "Name": "incoming_bytes",
+      "Help": "The volume of log events in uncompressed bytes uploaded to CloudWatch Logs"
+    },
+    "IncomingLogEvents": {
+      "Name": "incoming_log_events",
+      "Help": "The number of log events uploaded to CloudWatch Logs"
+    },
+    "LogEventsWithFindings": {
+      "Name": "log_events_with_findings",
+      "Help": "The number of log events that matched a data string"
+    },
+    "ThrottleCount": {
+      "Name": "throttle_count",
+      "Help": "The number of API operations that were throttled"
+    },
+    "TransformationErrors": {
+      "Name": "transformation_errors",
+      "Help": "The number of errors encountered while transforming log events"
+    },
+    "TransformedBytes": {
+      "Name": "transformed_bytes",
+      "Help": "The volume of the output of transformed log events, in uncompressed bytes"
+    },
+    "TransformedLogEvents": {
+      "Name": "transformed_log_events",
+      "Help": "The number of transformed log events"
+    }
+  },
+  "Dimensions": {
+    "LogGroupName": {
+      "Name": "log_group_name"
+    },
+    "DestinationType": {
+      "Name": "destination_type"
+    },
+    "FilterName": {
+      "Name": "filter_name"
+    },
+    "PolicyLevel": {
+      "Name": "policy_level"
+    },
+    "Service": {
+      "Name": "service"
+    },
+    "Class": {
+      "Name": "class"
+    },
+    "Type": {
+      "Name": "type"
+    },
+    "Resource": {
+      "Name": "resource"
+    }
+  }
+}

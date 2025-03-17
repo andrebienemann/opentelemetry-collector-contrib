@@ -1,0 +1,23 @@
+{
+  "Name": "AWS/CloudWatch/MetricStreams",
+  "Prefix": "aws_cloudwatch_metric_streams",
+  "Metrics": {
+    "MetricUpdate": {
+      "Name": "metric_update",
+      "Help": "The number of metric updates sent to the metric stream"
+    },
+    "TotalMetricUpdate": {
+      "Name": "total_metric_update",
+      "Help": "The number of metric updates sent to the metric stream including additional statistics"
+    },
+    "PublishErrorRate": {
+      "Name": "publish_error_rate",
+      "Help": "The number of unrecoverable errors that occur when putting data into the Firehose delivery stream"
+    }
+  },
+  "Dimensions": {
+    "MetricStreamName": {
+      "Name": "metric_stream_name"
+    }
+  }
+}
