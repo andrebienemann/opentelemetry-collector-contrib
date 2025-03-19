@@ -1,0 +1,173 @@
+{
+  "Name": "AWS/NetworkELB",
+  "Prefix": "aws_network_elb",
+  "Metrics": {
+    "ActiveFlowCount": {
+      "Name": "active_flow_count",
+      "Help": "The total number of concurrent flows (or connections) from clients to targets"
+    },
+    "ActiveFlowCount_TCP": {
+      "Name": "active_flow_count_tcp",
+      "Help": "The total number of concurrent TCP flows (or connections) from clients to targets"
+    },
+    "ActiveFlowCount_TLS": {
+      "Name": "active_flow_count_tls",
+      "Help": "The total number of concurrent TLS flows (or connections) from clients to targets"
+    },
+    "ActiveFlowCount_UDP": {
+      "Name": "active_flow_count_udp",
+      "Help": "The total number of concurrent UDP flows (or connections) from clients to targets"
+    },
+    "ActiveZonalShiftHostCount": {
+      "Name": "active_zonal_shift_host_count",
+      "Help": "The number of targets that are actively participating in zonal shift"
+    },
+    "ClientTLSNegotiationErrorCount": {
+      "Name": "client_tls_negotiation_error_count",
+      "Help": "The total number of TLS handshakes that failed during negotiation between a client and a TLS listener"
+    },
+    "ConsumedLCUs": {
+      "Name": "consumed_lcus",
+      "Help": "The number of load balancer capacity units (LCU) used by the load balancer"
+    },
+    "ConsumedLCUs_TCP": {
+      "Name": "consumed_lcus_tcp",
+      "Help": "The number of load balancer capacity units (LCU) used by the load balancer for TCP"
+    },
+    "ConsumedLCUs_TLS": {
+      "Name": "consumed_lcus_tls",
+      "Help": "The number of load balancer capacity units (LCU) used by the load balancer for TLS"
+    },
+    "ConsumedLCUs_UDP": {
+      "Name": "consumed_lcus_udp",
+      "Help": "The number of load balancer capacity units (LCU) used by the load balancer for UDP"
+    },
+    "HealthyHostCount": {
+      "Name": "healthy_host_count",
+      "Help": "The number of targets that are considered healthy"
+    },
+    "NewFlowCount": {
+      "Name": "new_flow_count",
+      "Help": "The total number of new flows (or connections) established from clients to targets"
+    },
+    "NewFlowCount_TCP": {
+      "Name": "new_flow_count_tcp",
+      "Help": "The total number of new TCP flows (or connections) established from clients to targets"
+    },
+    "NewFlowCount_TLS": {
+      "Name": "new_flow_count_tls",
+      "Help": "The total number of new TLS flows (or connections) established from clients to targets"
+    },
+    "NewFlowCount_UDP": {
+      "Name": "new_flow_count_udp",
+      "Help": "The total number of new UDP flows (or connections) established from clients to targets"
+    },
+    "PeakBytesPerSecond": {
+      "Name": "peak_bytes_per_second",
+      "Help": "The highest average bytes processed per second"
+    },
+    "PeakPacketsPerSecond": {
+      "Name": "peak_packets_per_second",
+      "Help": "Highest average packet rate"
+    },
+    "PortAllocationErrorCount": {
+      "Name": "port_allocation_error_count",
+      "Help": "The total number of ephemeral port allocation errors during a client IP translation operation"
+    },
+    "ProcessedBytes": {
+      "Name": "processed_bytes",
+      "Help": "The total number of bytes processed by the load balancer, including TCP/IP headers"
+    },
+    "ProcessedBytes_TCP": {
+      "Name": "processed_bytes_tcp",
+      "Help": "The total number of bytes processed by TCP listeners"
+    },
+    "ProcessedBytes_TLS": {
+      "Name": "processed_bytes_tls",
+      "Help": "The total number of bytes processed by TLS listeners"
+    },
+    "ProcessedBytes_UDP": {
+      "Name": "processed_bytes_udp",
+      "Help": "The total number of bytes processed by UDP listeners"
+    },
+    "ProcessedPackets": {
+      "Name": "processed_packets",
+      "Help": "The total number of packets processed by the load balancer"
+    },
+    "rejected_flow_count": {
+      "Name": "rejected_flow_count",
+      "Help": "The total number of flows (or connections) rejected by the load balancer"
+    },
+    "RejectedFlowCount_TCP": {
+      "Name": "rejected_flow_count_tcp",
+      "Help": "The number of TCP flows (or connections) rejected by the load balancer"
+    },
+    "ReservedLCUs": {
+      "Name": "reserved_lcus",
+      "Help": "The number of load balancer capacity units (LCUs) reserved for the load balancer using LCU Reservation"
+    },
+    "SecurityGroupBlockedFlowCount_Inbound_ICMP": {
+      "Name": "security_group_blocked_flow_count_inbound_icmp",
+      "Help": "The number of new ICMP messages rejected by the inbound rules of the load balancer security groups"
+    },
+    "SecurityGroupBlockedFlowCount_Inbound_TCP": {
+      "Name": "security_group_blocked_flow_count_inbound_tcp",
+      "Help": "The number of new TCP flows rejected by the inbound rules of the load balancer security groups"
+    },
+    "SecurityGroupBlockedFlowCount_Inbound_UDP": {
+      "Name": "security_group_blocked_flow_count_inbound_udp",
+      "Help": "The number of new UDP flows rejected by the inbound rules of the load balancer security groups"
+    },
+    "SecurityGroupBlockedFlowCount_Outbound_ICMP": {
+      "Name": "security_group_blocked_flow_count_outbound_icmp",
+      "Help": "The number of new ICMP messages rejected by the outbound rules of the load balancer security groups"
+    },
+    "SecurityGroupBlockedFlowCount_Outbound_TCP": {
+      "Name": "security_group_blocked_flow_count_outbound_tcp",
+      "Help": "The number of new TCP flows rejected by the outbound rules of the load balancer security groups"
+    },
+    "SecurityGroupBlockedFlowCount_Outbound_UDP": {
+      "Name": "security_group_blocked_flow_count_outbound_udp",
+      "Help": "The number of new UDP flows rejected by the outbound rules of the load balancer security groups"
+    },
+    "TargetTLSNegotiationErrorCount": {
+      "Name": "target_tls_negotiation_error_count",
+      "Help": "The total number of TLS handshakes that failed during negotiation between a TLS listener and a target"
+    },
+    "TCP_Client_Reset_Count": {
+      "Name": "tcp_client_reset_count",
+      "Help": "The total number of reset packets sent from a client to a target"
+    },
+    "TCP_ELB_Reset_Count": {
+      "Name": "tcp_elb_reset_count",
+      "Help": "The total number of reset packets generated by the load balancer"
+    },
+    "TCP_Target_Reset_Count": {
+      "Name": "tcp_target_reset_count",
+      "Help": "The total number of reset packets sent from a target to a client"
+    },
+    "UnHealthyHostCount": {
+      "Name": "unhealthy_host_count",
+      "Help": "The number of targets that are considered unhealthy"
+    },
+    "UnhealthyRoutingFlowCount": {
+      "Name": "unhealthy_routing_flow_count",
+      "Help": "The number of flows (or connections) that are routed using the routing failover action"
+    },
+    "ZonalHealthStatus": {
+      "Name": "zonal_health_status",
+      "Help": "The health status of a Network Load Balancer per availability zone (1 or 0 based on whether healthy or not)"
+    }
+  },
+  "Dimensions": {
+    "AvailabilityZone": {
+      "Name": "availability_zone"
+    },
+    "LoadBalancer": {
+      "Name": "load_balancer"
+    },
+    "TargetGroup": {
+      "Name": "target_group"
+    }
+  }
+}

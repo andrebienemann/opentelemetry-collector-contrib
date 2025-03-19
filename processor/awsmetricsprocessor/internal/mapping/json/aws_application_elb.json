@@ -1,0 +1,237 @@
+{
+  "Name": "AWS/ApplicationELB",
+  "Prefix": "aws_application_elb",
+  "Metrics": {
+    "ActiveConnectionCount": {
+      "Name": "active_connection_count",
+      "Help": "The total number of concurrent TCP connections active from clients to the load balancer and from the load balancer to targets"
+    },
+    "AnomalousHostCount": {
+      "Name": "anomalous_host_count",
+      "Help": "The number of hosts detected with anomalies"
+    },
+    "BYoIPUtilPercentage": {
+      "Name": "byoip_util_percentage",
+      "Help": "The percentage of usage from the IP pool"
+    },
+    "ClientTLSNegotiationErrorCount": {
+      "Name": "client_tls_negotiation_error_count",
+      "Help": "The number of TLS connections initiated by the client that did not establish a session with the load balancer due to a TLS error"
+    },
+    "ConsumedLCUs": {
+      "Name": "consumed_lcus",
+      "Help": "The number of load balancer capacity units (LCU) used by the load balancer"
+    },
+    "PeakLCUs": {
+      "Name": "peak_lcus",
+      "Help": "The maximum number of load balancer capacity units (LCU) used by the load balancer"
+    },
+    "ReservedLCUs": {
+      "Name": "reserved_lcus",
+      "Help": "The reserved capacity on a per-minute basis"
+    },
+    "DesyncMitigationMode_NonCompliant_Request_Count": {
+      "Name": "desync_mitigation_mode_noncompliant_request_count",
+      "Help": "The number of requests that do not comply with RFC 7230"
+    },
+    "DroppedInvalidHeaderRequestCount": {
+      "Name": "dropped_invalid_header_request_count",
+      "Help": "The number of requests where the load balancer removed HTTP headers with header fields that are not valid before routing the request"
+    },
+    "MitigatedHostCount": {
+      "Name": "mitigated_host_count",
+      "Help": "The number of targets under mitigation"
+    },
+    "ForwardedInvalidHeaderRequestCount": {
+      "Name": "forwarded_invalid_header_request_count",
+      "Help": "The number of requests routed by the load balancer that had HTTP headers with header fields that are not valid"
+    },
+    "GrpcRequestCount": {
+      "Name": "grpc_request_count",
+      "Help": "The number of gRPC requests processed over IPv4 and IPv6"
+    },
+    "HTTP_Fixed_Response_Count": {
+      "Name": "http_fixed_response_count",
+      "Help": "The number of fixed-response actions that were successful"
+    },
+    "HTTP_Redirect_Count": {
+      "Name": "http_redirect_count",
+      "Help": "The number of redirect actions that were successful"
+    },
+    "HTTP_Redirect_Url_Limit_Exceeded_Count": {
+      "Name": "http_redirect_url_limit_exceeded_count",
+      "Help": "The number of redirect actions that couldn't be completed because the URL in the response location header is larger than 8K"
+    },
+    "HTTPCode_ELB_3XX_Count": {
+      "Name": "http_code_elb_3xx_count",
+      "Help": "The number of HTTP 3XX redirection codes that originate from the load balancer"
+    },
+    "HTTPCode_ELB_4XX_Count": {
+      "Name": "http_code_elb_4xx_count",
+      "Help": "The number of HTTP 4XX client error codes that originate from the load balancer"
+    },
+    "HTTPCode_ELB_5XX_Count": {
+      "Name": "http_code_elb_5xx_count",
+      "Help": "The number of HTTP 5XX server error codes that originate from the load balancer"
+    },
+    "HTTPCode_ELB_500_Count": {
+      "Name": "http_code_elb_500_count",
+      "Help": "The number of HTTP 500 error codes that originate from the load balancer"
+    },
+    "HTTPCode_ELB_502_Count": {
+      "Name": "http_code_elb_502_count",
+      "Help": "The number of HTTP 502 error codes that originate from the load balancer"
+    },
+    "HTTPCode_ELB_503_Count": {
+      "Name": "http_code_elb_503_count",
+      "Help": "The number of HTTP 503 error codes that originate from the load balancer"
+    },
+    "HTTPCode_ELB_504_Count": {
+      "Name": "http_code_elb_504_count",
+      "Help": "The number of HTTP 504 error codes that originate from the load balancer"
+    },
+    "IPv6ProcessedBytes": {
+      "Name": "ipv6_processed_bytes",
+      "Help": "The total number of bytes processed by the load balancer over IPv6"
+    },
+    "IPv6RequestCount": {
+      "Name": "ipv6_request_count",
+      "Help": "The number of IPv6 requests received by the load balancer"
+    },
+    "NewConnectionCount": {
+      "Name": "new_connection_count",
+      "Help": "The total number of new TCP connections established from clients to the load balancer and from the load balancer to targets"
+    },
+    "NonStickyRequestCount": {
+      "Name": "nonsticky_request_count",
+      "Help": "The number of requests where the load balancer chose a new target because it couldn't use an existing sticky session"
+    },
+    "ProcessedBytes": {
+      "Name": "processed_bytes",
+      "Help": "The total number of bytes processed by the load balancer over IPv4 and IPv6 (HTTP header and HTTP payload)"
+    },
+    "RejectedConnectionCount": {
+      "Name": "rejected_connection_count",
+      "Help": "The number of connections that were rejected because the load balancer had reached its maximum number of connections"
+    },
+    "RequestCount": {
+      "Name": "request_count",
+      "Help": "The number of requests processed over IPv4 and IPv6"
+    },
+    "RuleEvaluations": {
+      "Name": "rule_evaluations",
+      "Help": "The number of rules evaluated by the load balancer while processing requests"
+    },
+    "ZonalShiftedHostCount": {
+      "Name": "zonal_shifted_host_count",
+      "Help": "The number of targets that are considered disabled due to zonal shift"
+    },
+    "HealthyHostCount": {
+      "Name": "healthy_host_count",
+      "Help": "The number of targets that are considered healthy"
+    },
+    "HTTPCode_Target_2XX_Count": {
+      "Name": "http_code_target_2xx_count",
+      "Help": "The number of 2XX HTTP response codes generated by the targets"
+    },
+    "HTTPCode_Target_3XX_Count": {
+      "Name": "http_code_target_3xx_count",
+      "Help": "The number of 3XX HTTP response codes generated by the targets"
+    },
+    "HTTPCode_Target_4XX_Count": {
+      "Name": "http_code_target_4xx_count",
+      "Help": "The number of 4XX HTTP response codes generated by the targets"
+    },
+    "HTTPCode_Target_5XX_Count": {
+      "Name": "http_code_target_5xx_count",
+      "Help": "The number of 5XX HTTP response codes generated by the targets"
+    },
+    "RequestCountPerTarget": {
+      "Name": "request_count_per_target",
+      "Help": "The average request count per target in a target group"
+    },
+    "TargetConnectionErrorCount": {
+      "Name": "target_connection_error_count",
+      "Help": "The number of connections that were not successfully established between the load balancer and target"
+    },
+    "TargetResponseTime": {
+      "Name": "target_response_time",
+      "Help": "The time elapsed, in seconds, after the request leaves the load balancer until the target starts to send the response headers"
+    },
+    "TargetTLSNegotiationErrorCount": {
+      "Name": "target_tls_negotiation_error_count",
+      "Help": "The number of TLS connections initiated by the load balancer that did not establish a session with the target"
+    },
+    "UnHealthyHostCount": {
+      "Name": "unhealthy_host_count",
+      "Help": "The number of targets that are considered unhealthy"
+    },
+    "HealthyStateDNS": {
+      "Name": "healthy_state_dns",
+      "Help": "The number of zones that meet the DNS healthy state requirements"
+    },
+    "HealthyStateRouting": {
+      "Name": "healthy_state_routing",
+      "Help": "The number of zones that meet the routing healthy state requirements"
+    },
+    "UnhealthyRoutingRequestCount": {
+      "Name": "unhealthy_routing_request_count",
+      "Help": "The number of requests that are routed using the routing failover action"
+    },
+    "UnhealthyStateDNS": {
+      "Name": "unhealthy_state_dns",
+      "Help": "The number of zones that do not meet the DNS healthy state requirements and therefore were marked unhealthy in DNS"
+    },
+    "UnhealthyStateRouting": {
+      "Name": "unhealthy_state_routing",
+      "Help": "The number of zones that do not meet the routing healthy state requirements"
+    },
+    "LambdaInternalError": {
+      "Name": "lambda_internal_error",
+      "Help": "The number of requests to a Lambda function that failed because of an issue internal to the load balancer or AWS Lambda"
+    },
+    "LambdaTargetProcessedBytes": {
+      "Name": "lambda_target_processed_bytes",
+      "Help": "The total number of bytes processed by the load balancer for requests to and responses from a Lambda function"
+    },
+    "LambdaUserError": {
+      "Name": "lambda_user_error",
+      "Help": "The number of requests to a Lambda function that failed because of an issue with the Lambda function"
+    },
+    "ELBAuthError": {
+      "Name": "elb_auth_error",
+      "Help": "The number of user authentications that could not be completed because an authenticate action was misconfigured"
+    },
+    "ELBAuthFailure": {
+      "Name": "elb_auth_failure",
+      "Help": "The number of user authentications that could not be completed because the IdP denied access to the user or an authorization code was used more than once"
+    },
+    "ELBAuthLatency": {
+      "Name": "elb_auth_latency",
+      "Help": "The time elapsed, in milliseconds, to query the IdP for the ID token and user info"
+    },
+    "ELBAuthRefreshTokenSuccess": {
+      "Name": "elb_auth_refresh_token_success",
+      "Help": "The number of times the load balancer successfully refreshed user claims using a refresh token provided by the IdP"
+    },
+    "ELBAuthSuccess": {
+      "Name": "elb_auth_success",
+      "Help": "The number of authenticate actions that were successful"
+    },
+    "ELBAuthUserClaimsSizeExceeded": {
+      "Name": "elb_auth_user_claims_size_exceeded",
+      "Help": "The number of times that a configured IdP returned user claims that exceeded 11K bytes in size"
+    }
+  },
+  "Dimensions": {
+    "AvailabilityZone": {
+      "Name": "availability_zone"
+    },
+    "LoadBalancer": {
+      "Name": "load_balancer"
+    },
+    "TargetGroup": {
+      "Name": "target_group"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "Name": "AWS/GatewayELB",
+  "Prefix": "aws_gateway_elb",
+  "Metrics": {
+    "ActiveFlowCount": {
+      "Name": "active_flow_count",
+      "Help": "The total number of concurrent flows (or connections) from clients to targets"
+    },
+    "ConsumedLCUs": {
+      "Name": "consumed_lcus",
+      "Help": "The number of load balancer capacity units (LCU) used by the load balancer"
+    },
+    "HealthyHostCount": {
+      "Name": "healthy_host_count",
+      "Help": "The number of targets that are considered healthy"
+    },
+    "NewFlowCount": {
+      "Name": "new_flow_count",
+      "Help": "The total number of new flows (or connections) established from clients to targets"
+    },
+    "PeakBytesPerSecond": {
+      "Name": "peak_bytes_per_second",
+      "Help": "The highest average bytes processed per second"
+    },
+    "ProcessedBytes": {
+      "Name": "processed_bytes",
+      "Help": "The total number of bytes processed by the load balancer"
+    },
+    "RejectedFlowCount": {
+      "Name": "rejected_flow_count",
+      "Help": "The total number of flows (or connections) rejected by the load balancer"
+    },
+    "RejectedFlowCount_TCP": {
+      "Name": "rejected_flow_count_tcp",
+      "Help": "The number of TCP flows (or connections) rejected by the load balancer"
+    },
+    "UnHealthyHostCount": {
+      "Name": "unhealthy_host_count",
+      "Help": "The number of targets that are considered unhealthy"
+    }
+  },
+  "Dimensions": {
+    "AvailabilityZone": {
+      "Name": "availability_zone"
+    },
+    "LoadBalancer": {
+      "Name": "load_balancer"
+    },
+    "TargetGroup": {
+      "Name": "target_group"
+    }
+  }
+}
