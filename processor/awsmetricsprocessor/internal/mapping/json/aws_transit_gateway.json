@@ -1,0 +1,53 @@
+{
+  "Name": "AWS/TransitGateway",
+  "Prefix": "aws_transit_gateway",
+  "Metrics": {
+    "BytesDropCountBlackhole":{
+      "Name": "bytes_drop_count_blackhole",
+      "Help": "The number of bytes dropped because they matched a blackhole route"
+    },
+    "BytesDropCountNoRoute":{
+      "Name": "bytes_drop_count_no_route",
+      "Help": "The number of bytes dropped because they did not match a route"
+    },
+    "BytesIn":{
+      "Name": "bytes_in",
+      "Help": "The number of bytes received by the transit gateway"
+    },
+    "BytesOut":{
+      "Name": "bytes_out",
+      "Help": "The number of bytes sent from the transit gateway"
+    },
+    "PacketsIn":{
+      "Name": "packets_in",
+      "Help": "The number of packets received by the transit gateway"
+    },
+    "PacketsOut":{
+      "Name": "packets_out",
+      "Help": "The number of packets sent by the transit gateway"
+    },
+    "PacketDropCountBlackhole":{
+      "Name": "packet_drop_count_blackhole",
+      "Help": "The number of packets dropped because they matched a blackhole route"
+    },
+    "PacketDropCountNoRoute":{
+      "Name": "packet_drop_count_no_route",
+      "Help": "The number of packets dropped because they did not match a route"
+    },
+    "PacketDropTTLExpired":{
+      "Name": "packet_drop_ttl_expired",
+      "Help": "The number of packets dropped because the TTL expired"
+    }  
+  },
+  "Dimensions": {
+    "TransitGateway":{
+      "Name": "transit_gateway"
+    },
+    "TransitGatewayAttachment":{
+      "Name": "transit_gateway_attachment"
+    },
+    "AvailabilityZone":{
+      "Name": "availability_zone"
+    }
+  }
+}

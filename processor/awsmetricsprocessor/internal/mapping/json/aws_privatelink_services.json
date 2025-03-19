@@ -1,0 +1,41 @@
+
+{
+  "Name": "AWS/PrivateLinkServices",
+  "Prefix": "aws_privatelink_services",
+  "Metrics": {
+    "ActiveConnections":{
+      "Name": "active_connections",
+      "Help": "The maximum number of active connections from clients to targets through the endpoints"
+    },
+    "BytesProcessed":{
+      "Name": "bytes_processed",
+      "Help": "The number of bytes exchanged between endpoint services and endpoints, in both directions"
+    },
+    "EndpointsCount":{
+      "Name": "endpoints_count",
+      "Help": "The number of endpoints connected to the endpoint service"
+    },
+    "NewConnections":{
+      "Name": "new_connections",
+      "Help": "The number of new connections established from clients to targets through the endpoints"
+    },
+    "RstPacketsSent":{
+      "Name": "rst_packets_sent",
+      "Help": "The number of RST packets sent to endpoints by the endpoint service"
+    }
+  },
+  "Dimensions": {
+    "Az":{
+      "Name": "az"
+    },
+    "Load Balancer Arn":{
+      "Name": "load_balancer_arn"
+    },
+    "Service Id":{
+      "Name": "service_id"
+    },
+    "VPC Endpoint Id":{
+      "Name": "vpc_endpoint_id"
+    }
+  }
+}

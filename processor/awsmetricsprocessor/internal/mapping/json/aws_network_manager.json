@@ -1,0 +1,26 @@
+{
+  "Name": "AWS/NetworkManager",
+  "Prefix": "aws_network_manager",
+  "Metrics": {
+    "DataIn": {
+      "Name": "data_in",
+      "Help": "The number of bytes received"
+    },
+    "DataOut": {
+      "Name": "data_out",
+      "Help": "The number of bytes sent"
+    },
+    "TunnelDownCount": {
+      "Name": "tunnel_down_count",
+      "Help": "The number of VPN tunnels on the device that have a DOWN status"
+    }
+  },
+  "Dimensions": {
+    "DeviceId": {
+      "Name": "device_id"
+    },
+    "LinkId": {
+      "Name": "link_id"
+    }
+  }
+}

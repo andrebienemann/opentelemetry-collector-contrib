@@ -1,0 +1,88 @@
+{
+  "Name": "AWS/NetworkFirewall",
+  "Prefix": "aws_network_firewall",
+  "Metrics": {
+    "DroppedPackets":{
+      "Name": "dropped_packets",
+      "Help": "The number of packets dropped due to rule actions"
+    },
+    "InvalidDroppedPackets":{
+      "Name": "invalid_dropped_packets",
+      "Help": "The number of packets dropped for failing packet validation due to issues with the packet"
+    },
+    "OtherDroppedPackets":{
+      "Name": "other_dropped_packets",
+      "Help": "The number of packets dropped due to reasons other than those described by InvalidDroppedPackets or DroppedPackets"
+    },
+    "Packets":{
+      "Name": "packets",
+      "Help": "The number of packets inspected for a firewall policy or stateless rulegroup for which a custom action is defined"
+    },
+    "PassedPackets":{
+      "Name": "passed_packets",
+      "Help": "The number of packets that the firewall allowed through to their destinations"
+    },
+    "ReceivedPackets":{
+      "Name": "received_packets",
+      "Help": "The number of packets received by the firewall"
+    },
+    "RejectedPackets":{
+      "Name": "rejected_packets",
+      "Help": "The number of packets rejected due to Reject stateful rule actions"
+    },
+    "StreamExceptionPolicyPackets":{
+      "Name": "stream_exception_policy_packets",
+      "Help": "The number of packets matching the firewall policy's stream exception policy"
+    },
+    "TLSDroppedPackets":{
+      "Name": "tls_dropped_packets",
+      "Help": "The number of packets dropped by the firewall while inspecting SSL/TLS packets"
+    },
+    "TLSErrors":{
+      "Name": "tls_errors",
+      "Help": "The number of errors observed by Network Firewall while inspecting SSL/TLS packets"
+    },
+    "TLSPassedPackets":{
+      "Name": "tls_passed_packets",
+      "Help": "The number of packets passed by Network Firewall while inspecting SSL/TLS packets"
+    },
+    "TLSReceivedPackets":{
+      "Name": "tls_received_packets",
+      "Help": "The number of SSL/TLS packets received by the Network Firewall firewall"
+    },
+    "TLSRejectedPackets":{
+      "Name": "tls_rejected_packets",
+      "Help": "The number of packets rejected by Network Firewall while inspecting SSL/TLS packets"
+    },
+    "TLSRevocationStatusOKConnections":{
+      "Name": "tls_revocation_status_ok_connections",
+      "Help": "The number of SSL/TLS connections to TLS servers whose certificates have been confirmed as not revoked"
+    },
+    "TLSRevocationStatusRevokedConnections":{
+      "Name": "tls_revocation_status_revoked_connections",
+      "Help": "The number of SSL/TLS connections to TLS servers whose certificates have been confirmed as revoked"
+    },
+    "TLSRevocationStatusUnknownConnections":{
+      "Name": "tls_revocation_status_unknown_connections",
+      "Help": "The number of SSL/TLS connections to TLS servers whose certificates revocation status is unknown or could not be determined"
+    },
+    "TLSTimedOutConnections":{
+      "Name": "tls_timed_out_connections",
+      "Help": "The number of SSL/TLS connections that timed out during SSL/TLS inspection"
+    }
+  },
+  "Dimensions": {
+    "AvailabilityZone":{
+      "Name": "availability_zone"
+    },
+    "CustomAction":{
+      "Name": "custom_action"
+    },
+    "Engine":{
+      "Name": "engine"
+    },
+    "FirewallName":{
+      "Name": "firewall_name"
+    }
+  }
+}

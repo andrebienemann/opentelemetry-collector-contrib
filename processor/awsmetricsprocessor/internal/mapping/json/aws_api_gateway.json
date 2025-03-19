@@ -1,0 +1,48 @@
+{
+  "Name": "AWS/ApiGateway",
+  "Prefix": "aws_api_gateway",
+  "Metrics": {
+    "4XXError": {
+      "Name": "4xx_error",
+      "Help": "The number of client-side errors captured"
+    },
+    "5XXError": {
+      "Name": "5xx_error",
+      "Help": "The number of server-side errors captured"
+    },
+    "CacheHitCount": {
+      "Name": "cache_hit_count",
+      "Help": "The number of requests served from the API cache"
+    },
+    "CacheMissCount": {
+      "Name": "cache_miss_count",
+      "Help": "The number of requests served from the backend"
+    },
+    "Count": {
+      "Name": "count",
+      "Help": "The total number API requests"
+    },
+    "IntegrationLatency": {
+      "Name": "integration_latency",
+      "Help": "The time between when API Gateway relays a request to the backend and when it receives a response from the backend"
+    },
+    "Latency": {
+      "Name": "latency",
+      "Help": "The time between when API Gateway receives a request from a client and when it returns a response to the client"
+    }
+  },
+  "Dimensions": {
+    "ApiName": {
+      "Name": "api_name"
+    },
+    "Method": {
+      "Name": "method"
+    },
+    "Resource": {
+      "Name": "resource"
+    },
+    "Stage": {
+      "Name": "stage"
+    }
+  }
+}

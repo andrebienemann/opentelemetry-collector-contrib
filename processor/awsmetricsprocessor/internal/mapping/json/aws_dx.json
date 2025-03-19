@@ -1,0 +1,69 @@
+{
+  "Name": "AWS/DX",
+  "Prefix": "aws_dx",
+  "Metrics": {
+    "ConnectionState": {
+      "Name": "connection_state",
+      "Help": "The state of the connection (1 indicates up and 0 indicates down)"
+    },
+    "ConnectionBpsEgress": {
+      "Name": "connection_bps_egress",
+      "Help": "The bitrate for outbound data from the AWS side of the connection"
+    },
+    "ConnectionBpsIngress": {
+      "Name": "connection_bps_ingress",
+      "Help": "The bitrate for inbound data to the AWS side of the connection"
+    },
+    "ConnectionPpsEgress": {
+      "Name": "connection_pps_egress",
+      "Help": "The packet rate for outbound data from the AWS side of the connection"
+    },
+    "ConnectionPpsIngress": {
+      "Name": "connection_pps_ingress",
+      "Help": "The packet rate for inbound data to the AWS side of the connection"
+    },
+    "ConnectionErrorCount": {
+      "Name": "connection_error_count",
+      "Help": "The total error count for all types of MAC level errors on the AWS device"
+    },
+    "ConnectionLightLevelTx": {
+      "Name": "connection_light_level_tx",
+      "Help": "Indicates the health of the fiber connection for outbound traffic from the AWS side of the connection"
+    },
+    "ConnectionLightLevelRx": {
+      "Name": "connection_light_level_rx",
+      "Help": "Indicates the health of the fiber connection for inbound traffic to the AWS side of the connection"
+    },
+    "ConnectionEncryptionState": {
+      "Name": "connection_encryption_state",
+      "Help": "Indicates the connection encryption status (1 indicates the encryption is up and 0 indicates the connection is down"
+    },
+    "VirtualInterfaceBpsEgress": {
+      "Name": "virtual_interface_bps_egress",
+      "Help": "The bitrate for outbound data from the AWS side of the virtual interface"
+    },
+    "VirtualInterfaceBpsIngress": {
+      "Name": "virtual_interface_bps_ingress",
+      "Help": "The bitrate for inbound data to the AWS side of the virtual interface"
+    },
+    "VirtualInterfacePpsEgress": {
+      "Name": "virtual_interface_pps_egress",
+      "Help": "The packet rate for outbound data from the AWS side of the virtual interface"
+    },
+    "VirtualInterfacePpsIngress": {
+      "Name": "virtual_interface_pps_egress",
+      "Help": "The packet rate for inbound data to the AWS side of the virtual interface"
+    }
+  },
+  "Dimensions": {
+    "ConnectionId": {
+      "Name": "connection_id"
+    },
+    "OpticalLaneNumber": {
+      "Name": "optical_lane_number"
+    },
+    "VirtualInterfaceId": {
+      "Name": "virtual_interface_id"
+    }
+  }
+}

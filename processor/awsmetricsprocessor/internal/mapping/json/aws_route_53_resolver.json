@@ -1,0 +1,34 @@
+{
+  "Name": "AWS/Route53Resolver",
+  "Prefix": "aws_route_53_resolver",
+  "Metrics": {
+    "EndpointHealthyENICount":{
+      "Name": "endpoint_healthy_eni_count",
+      "Help": "The number of elastic network interfaces in the OPERATIONAL status"
+    },
+    "EndpointUnhealthyENICount":{
+      "Name": "endpoint_unhealthy_eni_count",
+      "Help": "The number of elastic network interfaces in the AUTO_RECOVERING status"
+    },
+    "InboundQueryVolume":{
+      "Name": "inbound_query_volume",
+      "Help": "The number of DNS queries forwarded from the network to the VPCs"
+    },
+    "OutboundQueryVolume":{
+      "Name": "outbound_query_volume",
+      "Help": "The number of DNS queries forwarded from the VPCs to the network"
+    },
+    "OutboundQueryAggregateVolume":{
+      "Name": "outbound_query_aggregate_volume",
+      "Help": "The total number of DNS queries forwarded from Amazon VPCs to the network"
+    }
+  },
+  "Dimensions": {
+    "EndpointId":{
+      "Name": "endpoint_id"
+    },
+    "RniId":{
+      "Name": "rni_id"
+    }
+  }
+}
