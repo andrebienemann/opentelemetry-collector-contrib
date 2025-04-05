@@ -48,7 +48,7 @@
     },
     "DeliveryToAmazonOpenSearchServerless.Bytes": {
       "Name": "delivery_to_amazon_opensearch_serverless_bytes",
-      "Help": "The number of bytes indexed to OpenSearch Serverless over the specified time period"
+      "Help": "The number of bytes indexed to OpenSearch Serverless"
     },
     "DeliveryToAmazonOpenSearchServerless.DataFreshness": {
       "Name": "delivery_to_amazon_opensearch_serverless_data_freshness",
@@ -56,7 +56,7 @@
     },
     "DeliveryToAmazonOpenSearchServerless.Records": {
       "Name": "delivery_to_amazon_opensearch_serverless_records",
-      "Help": "The number of records indexed to OpenSearch Serverless over the specified time period"
+      "Help": "The number of records indexed to OpenSearch Serverless"
     },
     "DeliveryToAmazonOpenSearchServerless.Success": {
       "Name": "delivery_to_amazon_opensearch_serverless_success",
@@ -284,11 +284,11 @@
      },
      "SucceedProcessing.Records": {
        "Name": "succeed_processing_records",
-       "Help": "The number of successfully processed records over the specified time period"
+       "Help": "The number of successfully processed records"
      },
      "SucceedProcessing.Bytes": {
        "Name": "succeed_processing_bytes",
-       "Help": "The number of successfully processed bytes over the specified time period"
+       "Help": "The number of successfully processed bytes"
      },
      "OutputDecompressedBytes.Success": {
        "Name": "output_decompressed_bytes_success",

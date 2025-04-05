@@ -36,7 +36,7 @@
     },
     "ConnectionEncryptionState": {
       "Name": "connection_encryption_state",
-      "Help": "Indicates the connection encryption status (1 indicates the encryption is up and 0 indicates the connection is down"
+      "Help": "Indicates the connection encryption status"
     },
     "VirtualInterfaceBpsEgress": {
       "Name": "virtual_interface_bps_egress",

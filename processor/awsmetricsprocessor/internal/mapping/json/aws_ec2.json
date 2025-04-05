@@ -76,11 +76,11 @@
     },
     "EBSReadBytes": {
       "Name": "ebs_read_bytes",
-      "Help": "Bytes read from all EBS volumes attached to the instance in a specified period of time"
+      "Help": "Bytes read from all EBS volumes attached to the instance"
     },
     "EBSWriteBytes": {
       "Name": "ebs_write_bytes",
-      "Help": "Bytes written to all EBS volumes attached to the instance in a specified period of time"
+      "Help": "Bytes written to all EBS volumes attached to the instance"
     },
     "EBSIOBalance%": {
       "Name": "ebs_io_balance_percent",

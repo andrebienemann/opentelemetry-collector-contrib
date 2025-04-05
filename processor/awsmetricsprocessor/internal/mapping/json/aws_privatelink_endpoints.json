@@ -2,41 +2,41 @@
   "Name": "AWS/PrivateLinkEndpoints",
   "Prefix": "aws_privatelink_endpoints",
   "Metrics": {
-    "ActiveConnections":{
+    "ActiveConnections": {
       "Name": "active_connections",
       "Help": "The number of concurrent active connections"
     },
-    "BytesProcessed":{
+    "BytesProcessed": {
       "Name": "bytes_processed",
       "Help": "The number of bytes exchanged between endpoints and endpoint services, aggregated in both directions"
     },
-    "NewConnections":{
+    "NewConnections": {
       "Name": "new_connections",
       "Help": "The number of new connections established through the endpoint"
     },
-    "PacketsDropped":{
+    "PacketsDropped": {
       "Name": "packets_dropped",
       "Help": "The number of packets dropped by the endpoint"
     },
-    "RstPacketsReceived":{
+    "RstPacketsReceived": {
       "Name": "rst_packets_received",
       "Help": "The number of RST packets received by the endpoint"
     }
   },
   "Dimensions": {
-    "Endpoint Type":{
+    "Endpoint Type": {
       "Name": "endpoint_type"
     },
-    "Service Name":{
+    "Service Name": {
       "Name": "service_name"
     },
-    "Subnet Id":{
+    "Subnet Id": {
       "Name": "subnet_id"
     },
-    "VPC Endpoint Id":{
+    "VPC Endpoint Id": {
       "Name": "vpc_endpoint_id"
     },
-    "VPC Id":{
+    "VPC Id": {
       "Name": "vpc_id"
     }
   }

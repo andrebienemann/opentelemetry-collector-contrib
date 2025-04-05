@@ -11,8 +11,8 @@ type Metrics struct {
 }
 
 func (metrics *Metrics) Apply(f func(*Metric)) {
-	for r := 0; r < metrics.Slice.Len(); r++ {
-		metric := metrics.Slice.At(r)
+	for i := 0; i < metrics.Slice.Len(); i++ {
+		metric := metrics.Slice.At(i)
 		summary := metric.Summary()
 		summaryDataPointSlice := summary.DataPoints()
 		dataPoints := DataPoints{&summaryDataPointSlice}

@@ -2,24 +2,24 @@
   "Name": "AWS/VPN",
   "Prefix": "aws_vpn",
   "Metrics": {
-    "TunnelState":{
+    "TunnelState": {
       "Name": "tunnel_state",
       "Help": "The state of the tunnel (1 or 0 based on whether VPN is up or down)"
     },
-    "TunnelDataIn":{
+    "TunnelDataIn": {
       "Name": "tunnel_data_in",
       "Help": "The bytes received on the AWS side of the connection through the VPN tunnel from a customer gateway"
     },
-    "TunnelDataOut":{
+    "TunnelDataOut": {
       "Name": "tunnel_data_out",
       "Help": "The bytes sent from the AWS side of the connection through the VPN tunnel to the customer gateway"
     }
   },
   "Dimensions": {
-    "VpnId":{
+    "VpnId": {
       "Name": "vpn_id"
     },
-    "TunnelIpAddress":{
+    "TunnelIpAddress": {
       "Name": "tunnel_ip_address"
     }
   }
